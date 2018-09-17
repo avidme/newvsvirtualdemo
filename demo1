@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritancedemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Athelet a = new Athelet(1,"Athlet1",1);
+            Athelet b = new Athelet(2, "Maneuver", 3);
+            
+
+            Console.WriteLine("Person");
+            Person p = new Person(23, "Buttress");
+            p.getDetails();
+            p.checkInheritance();
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("Athelet");
+            a.getDetails();
+            b.getDetails();
+            a.checkInheritance();
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("Person As Athlet");
+            Person p1=new Athelet(24,"Wanowire",2);
+            p1.getDetails();
+            p1.checkInheritance();
+        }
+    }
+    public class Person
+    {
+        public int SSN { get; set; }
+        public string Name { get; set; }
+        public Person(int s, string n)
+        {
+            SSN = s;
+            Name = n;
+        }
+        public virtual void getDetails()
+        {
+            Console.WriteLine("Hello from Shabba to " + Name);
+        }
+        public void checkInheritance()
+        {
+            Console.WriteLine("Parent method called");
+        }
+    }
+    public class Athelet :Person
+    {
+        public int AtheletType { get; set; }
+        public Athelet(int s, string n,int a) :base(s,n)
+        {
+            
+            AtheletType = a;
+        }
+        public override void getDetails()
+        {
+            Console.WriteLine("Hello from Shabba to " + Name +". With SSN and Athelet Type "+ SSN+"\t"+AtheletType);
+        }
+        public void checkInheritance()
+        {
+            Console.WriteLine("Child Method called");
+        }
+
+
+    }
+}
