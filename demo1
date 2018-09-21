@@ -10,12 +10,9 @@ namespace Inheritancedemo
     {
         static void Main(string[] args)
         {
-            Athelet a = new Athelet(1,"Athlet1",1);
-            Athelet b = new Athelet(2, "Maneuver", 3);
-            
-
+            Athelet a = new Athelet(02,"Athlet1",1);
             Console.WriteLine("Person");
-            Person p = new Person(23, "Buttress");
+            Person p = new Person(01, "Person1");
             p.getDetails();
             p.checkInheritance();
             Console.WriteLine("-----------------------------------------------------------------");
@@ -25,7 +22,7 @@ namespace Inheritancedemo
             a.checkInheritance();
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("Person As Athlet");
-            Person p1=new Athelet(24,"Wanowire",2);
+            Person p1=new Athelet(03,"Athelet2",2);
             p1.getDetails();
             p1.checkInheritance();
         }
@@ -60,7 +57,7 @@ namespace Inheritancedemo
         {
             Console.WriteLine("Hello from Shabba to " + Name +". With SSN and Athelet Type "+ SSN+"\t"+AtheletType);
         }
-        public void checkInheritance()
+        public new void checkInheritance()
         {
             Console.WriteLine("Child Method called");
         }
